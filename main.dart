@@ -22,6 +22,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  ListTile buildkey(String t, IconData c) {
+    return ListTile(
+      dense: true,
+      title: Text("$t", style: TextStyle(color: Colors.grey[700], fontFamily: "Roboto", fontSize: 15),
+      ),
+      leading: Icon(c, color: Colors.grey[700],
+      ),
+      onTap: () {
+        Navigator.pop(context);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,23 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
             ),
-            ListTile(
-              dense: true,
-              title: Text(
-                "Social",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.people,
-                color: Colors.grey[700],
-              ),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+            buildkey('Social', Icons.people),
             ListTile(
               dense: true,
               title: Text(
@@ -149,23 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            ListTile(
-              dense: true,
-              onTap: () {
-                Navigator.pop(context);
-              },
-              title: Text(
-                "Forums",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.forum,
-                color: Colors.grey[700],
-              ),
-            ),
+            buildkey('Forum', Icons.forum),
             ListTile(
               dense: true,
               title: Text(
@@ -176,40 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 15),
               ),
             ),
-            ListTile(
-              dense: true,
-              onTap: () {
-                Navigator.pop(context);
-              },
-              title: Text(
-                "Starred",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.star_border,
-                color: Colors.grey[700],
-              ),
-            ),
-            ListTile(
-              dense: true,
-              onTap: () {
-                Navigator.pop(context);
-              },
-              title: Text(
-                "Snoozed",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.access_time,
-                color: Colors.grey[700],
-              ),
-            ),
+            buildkey('Starred', Icons.star_border),
+            buildkey('Snoozed', Icons.access_time),
             ListTile(
               dense: true,
               onTap: () {
@@ -231,57 +181,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.grey[700],
               ),
             ),
-            ListTile(
-              dense: true,
-              onTap: () {
-                Navigator.pop(context);
-              },
-              title: Text(
-                "Sent",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.send,
-                color: Colors.grey[700],
-              ),
-            ),
-            ListTile(
-              dense: true,
-              onTap: () {
-                Navigator.pop(context);
-              },
-              title: Text(
-                "Scheduled",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.local_post_office,
-                color: Colors.grey[700],
-              ),
-            ),
-            ListTile(
-              dense: true,
-              onTap: () {
-                Navigator.pop(context);
-              },
-              title: Text(
-                "Outbox",
-                style: TextStyle(
-                    color: Colors.grey[700],
-                    fontFamily: "Roboto",
-                    fontSize: 15),
-              ),
-              leading: Icon(
-                Icons.call_missed_outgoing,
-                color: Colors.grey[700],
-              ),
-            ),
+            buildkey('Sent', Icons.send),
+            buildkey('Scheduled', Icons.local_post_office),
+            buildkey('Outbox',  Icons.call_missed_outgoing),
             ListTile(
               dense: true,
               onTap: () {
